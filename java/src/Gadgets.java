@@ -6,6 +6,10 @@ public class Gadgets {
 
     public Gadgets(){
 
+    }public Gadgets(String brand, String model, int amount) {
+        setBrand(brand);
+        setModel(model);
+        setAmount(amount);
     }
     public Gadgets(int id, String brand, String model , int amount){
         setAmount(amount);

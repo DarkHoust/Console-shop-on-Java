@@ -2,6 +2,6 @@ import java.util.List;
 
 public interface IGadgetRepo {
     boolean createGadget(Gadgets gadget);
-    Gadgets getGadjet(int id);
+    Gadgets getGadget(int id);
     List<Gadgets> getAllGadgets();
 }
