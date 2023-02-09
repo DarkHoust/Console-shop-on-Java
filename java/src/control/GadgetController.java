@@ -1,12 +1,18 @@
+package control;
+
 import java.util.List;
 
-public class GadgetController {
+import entity.Gadgets;
+import sql_query.*;
+
+public class GadgetController implements Controller {
     private IGadgetRepo repo;
 
     public GadgetController(IGadgetRepo repo){
         this.repo = repo;
     }
 
+    @Override
     public String createGadget(String brand, String model, int amount){
         Gadgets gadgets = new Gadgets(brand,model,amount);
 
@@ -15,7 +21,8 @@ public class GadgetController {
         return (isCreated ? "Gadget has been added" : "Failed operation");
     }
 
-    public String getGadgets(int id){
+    @Override
+    public String getGadget(int id){
         Gadgets gadgets = repo.getGadget(id);
 
         return (gadgets == null? "This gadget is not exist" : gadgets.toString());

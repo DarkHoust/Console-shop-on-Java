@@ -1,3 +1,5 @@
+package sql_query;
+
 import java.sql.*;
 
 public class DB {

@@ -1,8 +1,11 @@
+package sql_query;
+
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
+import entity.Gadgets;
 
-public class GadgetRepo implements IGadgetRepo{
+public class GadgetRepo implements IGadgetRepo {
     private DB db;
 
     public GadgetRepo(DB db){
