@@ -1,4 +1,4 @@
-package sql_query;
+package sql_query.Interfaces;
 
 import java.util.List;
 import entity.Gadgets;

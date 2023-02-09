@@ -2,8 +2,8 @@ package control;
 
 import java.util.List;
 
+import sql_query.Interfaces.IGadgetRepo;
 import entity.Gadgets;
-import sql_query.*;
 
 public class GadgetController implements Controller {
     private IGadgetRepo repo;

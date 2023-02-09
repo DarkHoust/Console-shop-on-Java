@@ -3,6 +3,8 @@ package sql_query;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
+
+import sql_query.Interfaces.IGadgetRepo;
 import entity.Gadgets;
 
 public class GadgetRepo implements IGadgetRepo {
