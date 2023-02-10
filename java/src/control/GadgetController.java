@@ -1,6 +1,6 @@
 package control;
 
-import control.Interfaces.Controller;
+import control.InterfacesForGadgets.Controller;
 import java.util.List;
 import sql_query.Interfaces.IGadgetRepo;
 import entity.Gadgets;

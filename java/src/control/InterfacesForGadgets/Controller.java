@@ -1,4 +1,4 @@
-package control.Interfaces;
+package control.InterfacesForGadgets;
 
 public interface Controller {
     String createGadget(String brand, String model, int amount);
