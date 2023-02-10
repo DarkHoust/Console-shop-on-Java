@@ -3,6 +3,7 @@ package sql_query;
 import java.sql.*;
 
 public class DB {
+
     public Connection getConnection() throws SQLException, ClassNotFoundException {
         String connectionURL = "jdbc:postgresql://localhost:5432/Electronic";
 
@@ -18,4 +19,3 @@ public class DB {
         }
     }
 }
-

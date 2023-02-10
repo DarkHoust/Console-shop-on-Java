@@ -3,9 +3,8 @@ package sql_query;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
-
-import sql_query.Interfaces.IGadgetRepo;
 import entity.Gadgets;
+import sql_query.Interfaces.IGadgetRepo;
 
 public class GadgetRepo implements IGadgetRepo {
     private DB db;
@@ -86,7 +85,7 @@ public class GadgetRepo implements IGadgetRepo {
 
         try {
             con = db.getConnection();
-            String sql = "SELECT id,name,surname,gender FROM electronics";
+            String sql = "SELECT id,brand,model,amount FROM electronics";
             Statement st = con.createStatement();
 
             ResultSet rs = st.executeQuery(sql);
@@ -116,7 +115,4 @@ public class GadgetRepo implements IGadgetRepo {
 
         return null;
     }
-
-
-
 }

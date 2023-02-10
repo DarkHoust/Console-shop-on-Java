@@ -1,5 +1,15 @@
+import control.GadgetController;
+import sql_query.DB;
+import sql_query.GadgetRepo;
+import sql_query.Interfaces.IGadgetRepo;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        DB db = new DB();
+        IGadgetRepo repo = new GadgetRepo(db);
+        GadgetController controller = new GadgetController(repo);
+        Application app = new Application(controller);
+        app.start();
+
     }
 }

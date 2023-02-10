@@ -54,11 +54,10 @@ public class Gadgets {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", amount=" + amount +
-                '}';
+        return
+                "id: " + id +
+                ", brand: " + brand +
+                ", model: '" + model +
+                ", amount: " + amount;
     }
 }
