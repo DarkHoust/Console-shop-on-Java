@@ -14,30 +14,6 @@ public class Application {
 
     public void start(){
         while(true){
-            System.out.println(" **       **          **                                          **           \n" +
-                    "/**      /**         /**                                         /**           \n" +
-                    "/**   *  /**  *****  /**  *****   ******  **********   *****    ******  ****** \n" +
-                    "/**  *** /** **///** /** **///** **////**//**//**//** **///**  ///**/  **////**\n" +
-                    "/** **/**/**/******* /**/**  // /**   /** /** /** /**/*******    /**  /**   /**\n" +
-                    "/**** //****/**////  /**/**   **/**   /** /** /** /**/**////     /**  /**   /**\n" +
-                    "/**/   ///**//****** ***//***** //******  *** /** /**//******    //** //****** \n" +
-                    "//       //  ////// ///  /////   //////  ///  //  //  //////      //   //////  \n" +
-                    "          **                   **                            **        \n" +
-                    "         /**                  /**                           //         \n" +
-                    "  *****  /**  *****   *****  ****** ******  ******  *******  **  ***** \n" +
-                    " **///** /** **///** **///**///**/ //**//* **////**//**///**/** **///**\n" +
-                    "/******* /**/*******/**  //   /**   /** / /**   /** /**  /**/**/**  // \n" +
-                    "/**////  /**/**//// /**   **  /**   /**   /**   /** /**  /**/**/**   **\n" +
-                    "//****** ***//******//*****   //** /***   //******  ***  /**/**//***** \n" +
-                    " ////// ///  //////  /////     //  ///     //////  ///   // //  /////  \n" +
-                    "           **                           **\n" +
-                    "          /**                          /**\n" +
-                    "  ****** ******  ******  ******  ***** /**\n" +
-                    " **//// ///**/  **////**//**//* **///**/**\n" +
-                    "//*****   /**  /**   /** /** / /*******/**\n" +
-                    " /////**  /**  /**   /** /**   /**//// // \n" +
-                    " ******   //** //****** /***   //****** **\n" +
-                    "//////     //   //////  ///     ////// // ");
             System.out.println("------------------------------------------------------");
             System.out.println("Welcome to the electronic store!");
             System.out.println("What do you want to do?");
@@ -50,28 +26,29 @@ public class Application {
 
             try{
                 int a = sc.nextInt();
-                if (a == 1){
-                    System.out.println("Please enter ID...");
-                    int id = sc.nextInt();
-                    String response = controller.getGadget(id);
-                    System.out.println(response);
-                }
-                if (a == 2){
-                    String response = controller.getAllGadgets();
-                    System.out.println(response);
-                }
-                if (a == 3){
-                    System.out.println("1. What's Brand of the gadget?");
-                    String brand = sc.next();
-                    System.out.println("2. What's model of the gadget?");
-                    String model = sc.next();
-                    System.out.println("3. How much gadgets do you have?");
-                    int amount = sc.nextInt();
-                    String response = controller.createGadget(brand,model,amount);
-                    System.out.println(response);
-                }
-                else {
-                    break;
+                switch(a) {
+                    case 1:
+                        System.out.println("Please enter ID...");
+                        int id = sc.nextInt();
+                        String response = controller.getGadget(id);
+                        System.out.println(response);
+
+                    case 2:
+                        String response1 = controller.getAllGadgets();
+                        System.out.println(response1);
+
+                    case 3:
+                        System.out.println("1. What's Brand of the gadget?");
+                        String brand = sc.next();
+                        System.out.println("2. What's model of the gadget?");
+                        String model = sc.next();
+                        System.out.println("3. How much gadgets do you have?");
+                        int amount = sc.nextInt();
+                        String response2 = controller.createGadget(brand,model,amount);
+                        System.out.println(response2);
+
+                    default:
+                        break;
                 }
             }
             catch (InputMismatchException e){
