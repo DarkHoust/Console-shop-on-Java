@@ -13,7 +13,7 @@ public class Gadgets {
         setBrand(brand);
         setModel(model);
     }
-    public Gadgets(int id, String brand, String model , int amount){
+    public Gadgets(int id, int amount, String brand, String model){
         setAmount(amount);
         setBrand(brand);
         setId(id);

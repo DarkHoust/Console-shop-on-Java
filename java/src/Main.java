@@ -5,11 +5,11 @@ import sql_query.Interfaces.IGadgetRepo;
 
 public class Main {
     public static void main(String[] args) {
-        DB db = new DB();
-        IGadgetRepo repo = new GadgetRepo(db);
+        DB db = new DB(); // Создание объекта базы данных
+        IGadgetRepo repo = new GadgetRepo(db); // Создание репозитория
         GadgetController controller = new GadgetController(repo);
-        Application app = new Application(controller);
-        app.start();
+        Application app = new Application(controller); // Создание объекта приложения
+        app.start(); // Запуск приложения
 
     }
 }
