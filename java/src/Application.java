@@ -8,12 +8,12 @@ public class Application {
 
     Scanner sc = new Scanner(System.in);
 
-    public Application(GadgetController controller){
+    public Application(GadgetController controller) {
         this.controller = controller;
     }
 
-    public void start(){
-        while(true){
+    public void start() {
+        while (true) {
             System.out.println(" **       **          **                                          **           \n" +
                     "/**      /**         /**                                         /**           \n" +
                     "/**   *  /**  *****  /**  *****   ******  **********   *****    ******  ****** \n" +
@@ -48,36 +48,36 @@ public class Application {
             System.out.println("4. Exit?");
             System.out.println("------------------------------------------------------");
 
-            try{
+            try {
                 int a = sc.nextInt();
-                if (a == 1){
+                if (a == 1) {
                     System.out.println("Please enter ID...");
                     int id = sc.nextInt();
                     String response = controller.getGadget(id);
                     System.out.println(response);
                 }
-                if (a == 2){
+                if (a == 2) {
                     String response = controller.getAllGadgets();
                     System.out.println(response);
                 }
-                if (a == 3){
-                    System.out.println("1. What's Brand of the gadget?");
-                    String brand = sc.next();
-                    System.out.println("2. What's model of the gadget?");
-                    String model = sc.next();
+                if (a == 3) {
                     System.out.println("3. How much gadgets do you have?");
                     int amount = sc.nextInt();
-                    String response = controller.createGadget(brand,model,amount);
+
+                    System.out.println("1. What's Brand of the gadget?");
+                    String brand = sc.next();
+
+                    System.out.println("2. What's model of the gadget?");
+                    String model = sc.next();
+
+                    String response = controller.createGadget(brand, model, amount);
                     System.out.println(response);
-                }
-                else {
+                } else {
                     break;
                 }
-            }
-            catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("Enter only number!");
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }

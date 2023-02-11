@@ -13,8 +13,8 @@ public class GadgetController implements Controller {
     }
 
     @Override
-    public String createGadget(String brand, String model, int amount){
-        Gadgets gadgets = new Gadgets(brand,model,amount);
+    public String createGadget(int amount, String brand, String model){
+        Gadgets gadgets = new Gadgets(amount, brand,model);
 
         boolean isCreated = repo.createGadget(gadgets);
 

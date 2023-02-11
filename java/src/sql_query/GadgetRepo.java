@@ -13,17 +13,18 @@ public class GadgetRepo implements IGadgetRepo {
         this.db = db;
     }
 
-    public boolean createGadget(Gadgets gadgets){
+    public boolean createGadget(Gadgets gadgets){ //to sell
         Connection con = null;
 
         try {
             con = db.getConnection();
-            String sqlQuery = "INSERT INTO electronics(brand, model, amount) VALUES (?,?,?)";
+            String sqlQuery = "INSERT INTO electronics(amount, brand, model) VALUES (?,?,?)";
             PreparedStatement st = con.prepareStatement(sqlQuery);
 
-            st.setString(1, gadgets.getBrand());
-            st.setString(2,gadgets.getModel());
-            st.setInt(3,gadgets.getAmount());
+            st.setInt(1,gadgets.getAmount());
+            st.setString(2, gadgets.getBrand());
+            st.setString(3,gadgets.getModel());
+
 
             st.execute();
             return true;
@@ -45,7 +46,7 @@ public class GadgetRepo implements IGadgetRepo {
         return false;
     }
 
-    public Gadgets getGadget(int id){
+    public Gadgets getGadget(int id){ // to get info by id
         Connection con = null;
 
         try {
@@ -80,7 +81,7 @@ public class GadgetRepo implements IGadgetRepo {
         return null;
     }
 
-    public List<Gadgets> getAllGadgets(){
+    public List<Gadgets> getAllGadgets(){ // to get info about all gadgets
         Connection con = null;
 
         try {

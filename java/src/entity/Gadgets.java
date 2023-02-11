@@ -8,10 +8,10 @@ public class Gadgets {
 
     public Gadgets(){
 
-    }public Gadgets(String brand, String model, int amount) {
+    }public Gadgets(int amount, String brand, String model) {
+        setAmount(amount);
         setBrand(brand);
         setModel(model);
-        setAmount(amount);
     }
     public Gadgets(int id, String brand, String model , int amount){
         setAmount(amount);
