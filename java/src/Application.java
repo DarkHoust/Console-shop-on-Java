@@ -33,10 +33,12 @@ public class Application {
                         int id = sc.nextInt();
                         String response = controller.getGadget(id);
                         System.out.println(response);
+                        break;
 
                     case 2:
                         String response1 = controller.getAllGadgets();
                         System.out.println(response1);
+                        break;
 
                     case 3:
                         System.out.println("1. How much gadgets do you have?");
@@ -47,6 +49,7 @@ public class Application {
                         String model = sc.next();
                         String response2 = controller.createGadget(amount,brand,model);
                         System.out.println(response2);
+                        break;
 
                     default:
                         break;

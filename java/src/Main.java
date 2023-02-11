@@ -11,5 +11,6 @@ public class Main {
         Application app = new Application(controller); // Создание объекта приложения
         app.start(); // Запуск приложения
 
+
     }
 }
