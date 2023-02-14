@@ -1,6 +1,6 @@
 # ISA's team Project
 
-<p align="rigth">
+<p align="right">
   <img src="https://user-images.githubusercontent.com/88478815/218784874-98717460-d219-4dbe-93ad-c6ee365e1c3d.jpg">
 </p>
 
