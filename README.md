@@ -1,2 +1,5 @@
-# ISK_Assignment3
+ISA's team Project
+
+"Electronic shop" console app with User Account System
+
  
