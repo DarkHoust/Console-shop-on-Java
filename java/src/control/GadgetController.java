@@ -1,11 +1,11 @@
 package control;
 
-import control.InterfacesForGadgets.Controller;
+import control.interfaces.ControllerGadget;
 import java.util.List;
-import sql_query.Interfaces.IGadgetRepo;
+import sql_query.interfaces.IGadgetRepo;
 import entity.Gadgets;
 
-public class GadgetController implements Controller {
+public class GadgetController implements ControllerGadget {
     private IGadgetRepo repo;
 
     public GadgetController(IGadgetRepo repo){
@@ -29,7 +29,7 @@ public class GadgetController implements Controller {
     }
 
     public String getAllGadgets(){
-        List<Gadgets> gadgetsList=  repo.getAllGadgets();
+        List<Gadgets> gadgetsList = repo.getAllGadgets();
 
         return gadgetsList.toString();
     }

@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 import entity.Gadgets;
-import sql_query.Interfaces.IGadgetRepo;
+import sql_query.interfaces.IGadgetRepo;
 
 public class GadgetRepo implements IGadgetRepo {
     private DB db;
