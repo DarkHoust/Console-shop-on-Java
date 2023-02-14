@@ -19,7 +19,7 @@ public class UserController implements ControllerUser {
         return (isCreated ? "Congratulation! User has been registered!" : "Something went wrong");
     }
 
-    public String checkUser(String login, String password){
-        return (repo.checkUser(login,password) ? ("Welcome back, " + login) : ("Wrong password or login."));
+    public boolean checkUser(String login, String password){
+        return repo.checkUser(login,password);
     }
 }

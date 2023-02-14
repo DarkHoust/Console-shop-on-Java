@@ -9,11 +9,13 @@ import user_info.interfaces.IUserRepo;
 public class Main {
     public static void main(String[] args) {
         DB db = new DB(); // Создание объекта базы данных
-        IGadgetRepo repo = new GadgetRepo(db); // Создание репозитория
-        GadgetController controller = new GadgetController(repo);
+        IGadgetRepo gadgetRepo = new GadgetRepo(db); // Создание репозитория
+        IUserRepo userRepo = new UserRepo(db);
+        GadgetController gadgetController = new GadgetController(gadgetRepo);
+        UserController userController = new UserController(userRepo);
         IUserRepo repo1 = new UserRepo(db);
         UserController controller1 = new UserController(repo1);
-        Application app = new Application(controller); // Создание объекта приложения
+        Application app = new Application(gadgetController,userController); // Создание объекта приложения
         app.start(); // Запуск приложения
 
 

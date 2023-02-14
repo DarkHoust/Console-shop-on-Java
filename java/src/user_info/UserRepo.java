@@ -21,7 +21,7 @@ public class UserRepo implements IUserRepo {
 
         try {
             con = db.getConnection();
-            String sqlQuery = "SELECT login,password FROM user";
+            String sqlQuery = "SELECT login,passwords FROM users";
             Statement st = con.createStatement();
 
             ResultSet rs = st.executeQuery(sqlQuery);
@@ -29,17 +29,19 @@ public class UserRepo implements IUserRepo {
             List<User> users = new LinkedList<>();
 
             while (rs.next()){
-                User user1 = new User(rs.getString("login"), rs.getString("password"));
+                User user1 = new User(rs.getString("login"), rs.getString("passwords"));
                 users.add(user1);
             }
 
+            boolean isUserExist = false;
             for(User user : users){
-                if(user.getLogin() != login || user.getPassword() != password){
-                    return false;
+                if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
+                    isUserExist = true;
+                    break;
                 }
             }
 
-            return true;
+            return isUserExist;
 
         }
         catch (SQLException throwables){
@@ -64,7 +66,7 @@ public class UserRepo implements IUserRepo {
 
         try {
             con = db.getConnection();
-            String sqlQuery = "INSERT INTO user(login,password) VALUES (?,?)";
+            String sqlQuery = "INSERT INTO users(login,passwords) VALUES (?,?)";
             PreparedStatement st = con.prepareStatement(sqlQuery);
 
             st.setString(1,user.getLogin());
