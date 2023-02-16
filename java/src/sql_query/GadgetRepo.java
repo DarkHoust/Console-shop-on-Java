@@ -59,7 +59,10 @@ public class GadgetRepo implements IGadgetRepo {
             ResultSet rs = st.executeQuery();
 
             if(rs.next()){
-                Gadgets gadgets =  new Gadgets(rs.getInt("id"), rs.getInt("amount"), rs.getString("brand"), rs.getString("model"));
+                Gadgets gadgets =  new Gadgets(rs.getInt("id"),
+                                               rs.getInt("amount"),
+                                               rs.getString("brand"),
+                                               rs.getString("model"));
                 return gadgets;
             }
         }

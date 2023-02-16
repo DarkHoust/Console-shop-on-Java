@@ -28,9 +28,9 @@ public class GadgetController implements ControllerGadget {
         return (gadgets == null? "This gadget is not exist" : gadgets.toString());
     }
 
-    public String getAllGadgets(){
+    public List<Gadgets> getAllGadgets(){
         List<Gadgets> gadgetsList = repo.getAllGadgets();
 
-        return gadgetsList.toString();
+        return gadgetsList;
     }
 }

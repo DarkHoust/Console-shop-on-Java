@@ -1,9 +1,11 @@
 import control.GadgetController;
 import control.UserController;
+import entity.Gadgets;
 import entity.User;
 
 import java.sql.SQLOutput;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Application {
@@ -42,8 +44,13 @@ public class Application {
                         break;
 
                     case 2:
-                        String response1 = gadgetController.getAllGadgets();
-                        System.out.println(response1);
+                        List<Gadgets> response1 = gadgetController.getAllGadgets();
+                        for(Gadgets gadget : response1)
+                        {
+                            System.out.println("-------------------------------------------------------------------------------------------------");
+                            System.out.println(gadget.getId() + " | " + gadget.getBrand() + " | " + gadget.getModel() + " | " + gadget.getAmount());
+                            System.out.println("-------------------------------------------------------------------------------------------------");
+                        }
                         break;
 
                     case 3:
