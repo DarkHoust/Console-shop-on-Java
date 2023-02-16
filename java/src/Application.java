@@ -35,7 +35,7 @@ public class Application {
 
             try {
                 int a = sc.nextInt();
-                switch(a) {
+                switch (a) {
                     case 1:
                         System.out.println("Please enter ID...");
                         int id = sc.nextInt();
@@ -45,11 +45,10 @@ public class Application {
 
                     case 2:
                         List<Gadgets> response1 = gadgetController.getAllGadgets();
-                        for(Gadgets gadget : response1)
-                        {
+                        for (Gadgets gadget : response1) {
                             System.out.println("-------------------------------------------------------------------------------------------------");
-                            System.out.println(gadget.getId() + " | " + gadget.getBrand() + " | " + gadget.getModel() + " | " + gadget.getAmount());
-                            System.out.println("-------------------------------------------------------------------------------------------------");
+                            System.out.println("ID: " + gadget.getId() + " | Brand: " + gadget.getBrand() + " | Model: " + gadget.getModel() + " | Amount: " + gadget.getAmount());
+
                         }
                         break;
 
@@ -59,7 +58,7 @@ public class Application {
                         System.out.println("Enter your password:");
                         String passwordExist = sc.next();
 
-                        if(userController.checkUser(loginExist,passwordExist)){
+                        if (userController.checkUser(loginExist, passwordExist)) {
                             System.out.println("Welcome back, " + loginExist);
                             System.out.println("1. How much gadgets do you have?");
                             int amount = sc.nextInt();
@@ -67,11 +66,10 @@ public class Application {
                             String brand = sc.next();
                             System.out.println("3. What's model of the gadget?");
                             String model = sc.next();
-                            String response2 = gadgetController.createGadget(amount,brand,model);
+                            String response2 = gadgetController.createGadget(amount, brand, model);
                             System.out.println(response2);
                             break;
-                        }
-                        else{
+                        } else {
                             System.out.println("Wrong password or login, please try later!");
                             break;
                         }
@@ -83,7 +81,7 @@ public class Application {
                         System.out.println("Enter password for you account.");
                         System.out.println("Password:...");
                         String password = sc.next();
-                        String response3 = userController.createUser(login,password);
+                        String response3 = userController.createUser(login, password);
                         System.out.println(response3);
                         break;
                     default:
