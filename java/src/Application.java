@@ -26,33 +26,31 @@ public class Application {
             System.out.println("Welcome to the electronic store!");
             System.out.println("What do you want to do?");
             System.out.println("Choose option:");
-            System.out.println("1. Get information of gadget by ID");
-            System.out.println("2. Get all information of gadgets");
-            System.out.println("3. Add new gadgets at the store (Account Required)");
-            System.out.println("4. Create a User account ");
-            System.out.println("5. Exit?");
+            System.out.println("1. Get all information of gadgets");
+            System.out.println("2. Add new gadgets at the store (Account Required)");
+            System.out.println("3. Create a User account ");
+            System.out.println("4. Exit?");
             System.out.println("------------------------------------------------------");
 
             try {
                 int a = sc.nextInt();
                 switch (a) {
                     case 1:
-                        System.out.println("Please enter ID...");
-                        int id = sc.nextInt();
-                        String response = gadgetController.getGadget(id);
-                        System.out.println(response);
-                        break;
-
-                    case 2:
                         List<Gadgets> response1 = gadgetController.getAllGadgets();
                         for (Gadgets gadget : response1) {
                             System.out.println("-------------------------------------------------------------------------------------------------");
                             System.out.println("ID: " + gadget.getId() + " | Brand: " + gadget.getBrand() + " | Model: " + gadget.getModel() + " | Amount: " + gadget.getAmount());
 
                         }
+
+                        System.out.println("Write the ID of the gadget that you want to buy");
+                        int id = sc.nextInt();
+                        System.out.println("Are you sure, that you want to buy Gadget: " + gadgetController.getGadget(id) + "?");
+                        System.out.println("If you're sure, then write the amount of gadgets you want to purchase");
+                        int amountForSale = sc.nextInt();
                         break;
 
-                    case 3:
+                    case 2:
                         System.out.println("Please, enter your login:");
                         String loginExist = sc.next();
                         System.out.println("Enter your password:");
@@ -74,7 +72,7 @@ public class Application {
                             break;
                         }
 
-                    case 4:
+                    case 3:
                         System.out.println("Please, enter your login");
                         System.out.println("Login:...");
                         String login = sc.next();
