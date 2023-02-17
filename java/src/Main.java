@@ -16,8 +16,6 @@ public class Main {
         IUserRepo repo1 = new UserRepo(db);
         UserController controller1 = new UserController(repo1);
         Application app = new Application(gadgetController,userController); // Создание объекта приложения
-        app.start(); // Запуск приложения
-
-
+        app.start(); // Запуск приложениe
     }
 }

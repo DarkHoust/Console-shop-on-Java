@@ -48,6 +48,7 @@ public class Application {
                         System.out.println("Are you sure, that you want to buy Gadget: " + gadgetController.getGadget(id) + "?");
                         System.out.println("If you're sure, then write the amount of gadgets you want to purchase");
                         int amountForSale = sc.nextInt();
+                        gadgetController.updateInfo(id,amountForSale);
                         break;
 
                     case 2:

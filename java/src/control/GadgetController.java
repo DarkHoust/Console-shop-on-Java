@@ -33,4 +33,13 @@ public class GadgetController implements ControllerGadget {
 
         return gadgetsList;
     }
+
+    public void updateInfo(int id, int amount){
+        if (repo.isAvailable(id)){
+            System.out.println(repo.UpdateAmount(id,amount));
+        }
+        else {
+            System.out.println("Sorry, gadget is out of stock");
+        }
+    }
 }
