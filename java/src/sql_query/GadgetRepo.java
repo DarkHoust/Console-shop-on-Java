@@ -160,10 +160,13 @@ public class GadgetRepo implements IGadgetRepo {
             String sql = "SELECT amount FROM electronics WHERE id = ?";
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setInt(1,id);
-            ResultSet rs = statement.executeQuery(sql);
 
-            if (rs.getInt("amount") <= 0){
-                return false;
+            ResultSet rs = statement.executeQuery();
+
+            while(rs.next()) {
+                if (rs.getInt("amount") <= 0) {
+                    return false;
+                }
             }
 
         }
