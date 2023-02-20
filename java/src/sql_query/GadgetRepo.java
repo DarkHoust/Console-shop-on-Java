@@ -24,8 +24,6 @@ public class GadgetRepo implements IGadgetRepo {
             st.setInt(1,gadgets.getAmount());
             st.setString(2, gadgets.getBrand());
             st.setString(3,gadgets.getModel());
-
-
             st.execute();
             return true;
         }
